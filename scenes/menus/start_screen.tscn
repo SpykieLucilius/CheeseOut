@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://btww7oev348ni"]
+
+[ext_resource type="FontFile" uid="uid://c428rlfd4rfv1" path="res://assets/fonts/MoonCheese-Regular.ttf" id="1_7c6e5"]
+[ext_resource type="Script" uid="uid://dvnqf4mhtvoa0" path="res://scripts/scenes/start_screen.gd" id="1_njl8u"]
+
+[node name="StartScreen" type="Node2D" unique_id=939912574]
+script = ExtResource("1_njl8u")
+
+[node name="TitleText" type="Label" parent="." unique_id=529574816]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 927.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(1, 1, 0.654902, 1)
+theme_override_fonts/font = ExtResource("1_7c6e5")
+theme_override_font_sizes/font_size = 127
+text = "Cheese Out!"
+vertical_alignment = 1
+
+[node name="SoloButton" type="Button" parent="." unique_id=1213527195]
+offset_left = 320.0
+offset_top = 256.0
+offset_right = 512.0
+offset_bottom = 448.0
+theme_override_colors/font_color = Color(1, 1, 0.654902, 1)
+theme_override_fonts/font = ExtResource("1_7c6e5")
+theme_override_font_sizes/font_size = 40
+text = "Solo"
+
+[node name="MultiplayerButton" type="Button" parent="." unique_id=2143897822]
+offset_left = 640.0
+offset_top = 256.0
+offset_right = 832.0
+offset_bottom = 448.0
+theme_override_colors/font_color = Color(1, 1, 0.654902, 1)
+theme_override_fonts/font = ExtResource("1_7c6e5")
+theme_override_font_sizes/font_size = 40
+text = "Multi"
+
+[node name="SettingButton" type="Button" parent="." unique_id=1111634205]
+offset_left = 1024.0
+offset_top = 512.0
+offset_right = 1088.0
+offset_bottom = 576.0
+
+[node name="GamesButton" type="Button" parent="." unique_id=269784693]
+offset_left = 64.0
+offset_top = 512.0
+offset_right = 128.0
+offset_bottom = 576.0
+
+[node name="QuitButton" type="Button" parent="." unique_id=395211430]
+offset_left = 1024.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 128.0

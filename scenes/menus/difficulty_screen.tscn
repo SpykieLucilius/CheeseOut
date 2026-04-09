@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cxj86tw0qtq4d"]
+
+[ext_resource type="Script" uid="uid://bi7eyyxrgqik0" path="res://scripts/scenes/difficulty_screen.gd" id="1_84ck3"]
+
+[node name="DifficultyScreen" type="Node2D" unique_id=1770934804]
+script = ExtResource("1_84ck3")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d1w1gy1xmmcjm"]
+
+[ext_resource type="Script" uid="uid://bj0pdex0vfm0v" path="res://scripts/scenes/settings_screen.gd" id="1_gypag"]
+
+[node name="SettingsScreen" type="Node2D" unique_id=661225495]
+script = ExtResource("1_gypag")
+
+[node name="BackButton" type="Button" parent="." unique_id=593736782]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
