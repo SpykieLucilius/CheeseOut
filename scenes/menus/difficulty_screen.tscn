@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cxj86tw0qtq4d"]
 
 [ext_resource type="Script" uid="uid://bi7eyyxrgqik0" path="res://scripts/scenes/difficulty_screen.gd" id="1_84ck3"]
+[ext_resource type="FontFile" uid="uid://c428rlfd4rfv1" path="res://assets/fonts/MoonCheese-Regular.ttf" id="2_frb05"]
 
 [node name="DifficultyScreen" type="Node2D" unique_id=1770934804]
 script = ExtResource("1_84ck3")
@@ -11,4 +12,37 @@ offset_top = 64.0
 offset_right = 128.0
 offset_bottom = 128.0
 
+[node name="EasyButton" type="Button" parent="." unique_id=1448548940]
+offset_left = 224.0
+offset_top = 320.0
+offset_right = 416.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(1, 1, 0.654902, 1)
+theme_override_fonts/font = ExtResource("2_frb05")
+theme_override_font_sizes/font_size = 35
+text = "Easy"
+
+[node name="NormalButton" type="Button" parent="." unique_id=1520472226]
+offset_left = 480.0
+offset_top = 320.0
+offset_right = 672.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(1, 1, 0.654902, 1)
+theme_override_fonts/font = ExtResource("2_frb05")
+theme_override_font_sizes/font_size = 35
+text = "Normal"
+
+[node name="HardButton" type="Button" parent="." unique_id=340163893]
+offset_left = 736.0
+offset_top = 320.0
+offset_right = 928.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(1, 1, 0.654902, 1)
+theme_override_fonts/font = ExtResource("2_frb05")
+theme_override_font_sizes/font_size = 35
+text = "Hard"
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="NormalButton" to="." method="_on_normal_button_pressed"]
+[connection signal="pressed" from="HardButton" to="." method="_on_hard_button_pressed"]

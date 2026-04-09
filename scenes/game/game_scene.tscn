@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c0r2hv5sra77"]
+
+[ext_resource type="Script" uid="uid://eyxg7ex24q0o" path="res://scripts/scenes/game_scene.gd" id="1_5xmm1"]
+
+[node name="GameScene" type="Node2D" unique_id=864776842]
+script = ExtResource("1_5xmm1")
+
+[node name="BackButton" type="Button" parent="." unique_id=1836273556]
+offset_left = 1024.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 128.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
