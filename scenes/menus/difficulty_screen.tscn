@@ -4,3 +4,11 @@
 
 [node name="DifficultyScreen" type="Node2D" unique_id=1770934804]
 script = ExtResource("1_84ck3")
+
+[node name="BackButton" type="Button" parent="." unique_id=284057479]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
