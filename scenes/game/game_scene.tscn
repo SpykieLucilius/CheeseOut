@@ -2,13 +2,119 @@
 
 [ext_resource type="Script" uid="uid://eyxg7ex24q0o" path="res://scripts/scenes/game_scene.gd" id="1_5xmm1"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xmm1"]
+size = Vector2(80, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omorx"]
+size = Vector2(286, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydf3n"]
+size = Vector2(286, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hqhf"]
+size = Vector2(1152, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0de3"]
+size = Vector2(1152, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6thfb"]
+size = Vector2(15, 15)
+
 [node name="GameScene" type="Node2D" unique_id=864776842]
 script = ExtResource("1_5xmm1")
 
-[node name="BackButton" type="Button" parent="." unique_id=1836273556]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1862077226]
+
+[node name="BackButton" type="Button" parent="CanvasLayer" unique_id=1836273556]
 offset_left = 1024.0
 offset_top = 64.0
 offset_right = 1088.0
 offset_bottom = 128.0
 
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[node name="Player1" type="CharacterBody2D" parent="." unique_id=1652399246]
+position = Vector2(576, 150)
+
+[node name="Player1Shape" type="ColorRect" parent="Player1" unique_id=451888985]
+offset_left = -40.0
+offset_top = -5.0
+offset_right = 40.0
+offset_bottom = 5.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Player1Collision" type="CollisionShape2D" parent="Player1" unique_id=1510140517]
+shape = SubResource("RectangleShape2D_5xmm1")
+
+[node name="Player2" type="CharacterBody2D" parent="." unique_id=254918340]
+position = Vector2(576, 498)
+
+[node name="Player2Shape" type="ColorRect" parent="Player2" unique_id=1137269586]
+offset_left = -40.0
+offset_top = -5.0
+offset_right = 40.0
+offset_bottom = 5.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Player2Collision" type="CollisionShape2D" parent="Player2" unique_id=1158707756]
+shape = SubResource("RectangleShape2D_5xmm1")
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=497900672]
+position = Vector2(143, 324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=1199185885]
+shape = SubResource("RectangleShape2D_omorx")
+
+[node name="WallLeftShape" type="ColorRect" parent="WallLeft" unique_id=1350832466]
+offset_left = -143.0
+offset_top = -324.0
+offset_right = 143.0
+offset_bottom = 324.0
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=145703816]
+position = Vector2(1009, 324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=207552944]
+shape = SubResource("RectangleShape2D_ydf3n")
+
+[node name="WallLeftShape" type="ColorRect" parent="WallRight" unique_id=943051975]
+offset_left = -143.0
+offset_top = -324.0
+offset_right = 143.0
+offset_bottom = 324.0
+
+[node name="WallTop" type="StaticBody2D" parent="." unique_id=130458734]
+position = Vector2(576, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=1957922008]
+shape = SubResource("RectangleShape2D_6hqhf")
+
+[node name="WallBottom" type="StaticBody2D" parent="." unique_id=196244941]
+position = Vector2(576, 653)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" unique_id=592794034]
+shape = SubResource("RectangleShape2D_p0de3")
+
+[node name="Ball1" type="CharacterBody2D" parent="." unique_id=1593321294]
+position = Vector2(676, 320)
+
+[node name="Ball1Shape" type="ColorRect" parent="Ball1" unique_id=1095171390]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball1" unique_id=1251073704]
+shape = SubResource("RectangleShape2D_6thfb")
+
+[node name="Ball2" type="CharacterBody2D" parent="." unique_id=194463808]
+position = Vector2(476, 320)
+
+[node name="Ball2Shape" type="ColorRect" parent="Ball2" unique_id=333656609]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2" unique_id=1511890513]
+shape = SubResource("RectangleShape2D_6thfb")
+
+[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]

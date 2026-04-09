@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bufo718x34vrc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy3a3"]
+size = Vector2(80, 20)
+
+[node name="Cheese" type="StaticBody2D" unique_id=1287418917]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1786992201]
+shape = SubResource("RectangleShape2D_uy3a3")
+
+[node name="CheeseShape" type="ColorRect" parent="." unique_id=130293428]
+offset_left = -40.0
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 10.0
