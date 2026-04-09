@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c0r2hv5sra77"]
 
 [ext_resource type="Script" uid="uid://eyxg7ex24q0o" path="res://scripts/scenes/game_scene.gd" id="1_5xmm1"]
+[ext_resource type="Script" uid="uid://c7qv0kuv22rgt" path="res://scripts/entities/player_1.gd" id="2_ydf3n"]
+[ext_resource type="Script" uid="uid://cgusng33tf4hu" path="res://scripts/entities/player_2.gd" id="3_6hqhf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xmm1"]
 size = Vector2(80, 10)
@@ -23,9 +25,9 @@ size = Vector2(15, 15)
 [node name="GameScene" type="Node2D" unique_id=864776842]
 script = ExtResource("1_5xmm1")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1862077226]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1862077226]
 
-[node name="BackButton" type="Button" parent="CanvasLayer" unique_id=1836273556]
+[node name="BackButton" type="Button" parent="UI" unique_id=1836273556]
 offset_left = 1024.0
 offset_top = 64.0
 offset_right = 1088.0
@@ -33,6 +35,7 @@ offset_bottom = 128.0
 
 [node name="Player1" type="CharacterBody2D" parent="." unique_id=1652399246]
 position = Vector2(576, 150)
+script = ExtResource("2_ydf3n")
 
 [node name="Player1Shape" type="ColorRect" parent="Player1" unique_id=451888985]
 offset_left = -40.0
@@ -46,6 +49,7 @@ shape = SubResource("RectangleShape2D_5xmm1")
 
 [node name="Player2" type="CharacterBody2D" parent="." unique_id=254918340]
 position = Vector2(576, 498)
+script = ExtResource("3_6hqhf")
 
 [node name="Player2Shape" type="ColorRect" parent="Player2" unique_id=1137269586]
 offset_left = -40.0
@@ -117,4 +121,4 @@ offset_bottom = 7.5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2" unique_id=1511890513]
 shape = SubResource("RectangleShape2D_6thfb")
 
-[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
