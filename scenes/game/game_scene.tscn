@@ -19,9 +19,6 @@ size = Vector2(1152, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0de3"]
 size = Vector2(1152, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6thfb"]
-size = Vector2(15, 15)
-
 [node name="GameScene" type="Node2D" unique_id=864776842]
 script = ExtResource("1_5xmm1")
 
@@ -33,8 +30,8 @@ offset_top = 64.0
 offset_right = 1088.0
 offset_bottom = 128.0
 
-[node name="Player1" type="CharacterBody2D" parent="." unique_id=1652399246]
-position = Vector2(576, 150)
+[node name="Player1" type="CharacterBody2D" parent="." unique_id=395124802]
+position = Vector2(576, 498)
 script = ExtResource("2_ydf3n")
 
 [node name="Player1Shape" type="ColorRect" parent="Player1" unique_id=451888985]
@@ -47,8 +44,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Player1Collision" type="CollisionShape2D" parent="Player1" unique_id=1510140517]
 shape = SubResource("RectangleShape2D_5xmm1")
 
-[node name="Player2" type="CharacterBody2D" parent="." unique_id=254918340]
-position = Vector2(576, 498)
+[node name="Player2" type="CharacterBody2D" parent="." unique_id=232500530]
+position = Vector2(576, 150)
 script = ExtResource("3_6hqhf")
 
 [node name="Player2Shape" type="ColorRect" parent="Player2" unique_id=1137269586]
@@ -96,29 +93,5 @@ position = Vector2(576, 653)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" unique_id=592794034]
 shape = SubResource("RectangleShape2D_p0de3")
-
-[node name="Ball1" type="CharacterBody2D" parent="." unique_id=1593321294]
-position = Vector2(676, 320)
-
-[node name="Ball1Shape" type="ColorRect" parent="Ball1" unique_id=1095171390]
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 7.5
-offset_bottom = 7.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball1" unique_id=1251073704]
-shape = SubResource("RectangleShape2D_6thfb")
-
-[node name="Ball2" type="CharacterBody2D" parent="." unique_id=194463808]
-position = Vector2(476, 320)
-
-[node name="Ball2Shape" type="ColorRect" parent="Ball2" unique_id=333656609]
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 7.5
-offset_bottom = 7.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2" unique_id=1511890513]
-shape = SubResource("RectangleShape2D_6thfb")
 
 [connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]

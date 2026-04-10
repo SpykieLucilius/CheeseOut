@@ -8,7 +8,7 @@ func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menus/start_screen.tscn")
 
 # ------------------------------------------------------------------
-# Cheese tiles placement functions
+# Cheese tiles spawn and placement functions
 # ------------------------------------------------------------------
 
 const CheeseScene = preload("res://scenes/game/cheese.tscn")
@@ -19,20 +19,17 @@ const CHEESE_HEIGHT = 20
 const GAP_X = 10
 const GAP_Y = 10
 
-var PADDLE1_Y = 150.0
-var PADDLE2_Y = 498.0
-var MARGIN = 20.0
-var cheese_grid__height = ROWS * CHEESE_HEIGHT + (ROWS - 1) * GAP_Y
-
-func _ready():
-	spawn_cheese()
+const  PADDLE2_Y = 150.0
+const PADDLE1_Y = 498.0
+const MARGIN = 20.0
+var cheese_grid_height = ROWS * CHEESE_HEIGHT + (ROWS - 1) * GAP_Y
 
 func spawn_cheese():
 	var total_width = COLUMNS * CHEESE_WIDTH + (COLUMNS - 1) * GAP_X
 	var start_x = (1152.0 / 2.0) - (total_width / 2.0) + (CHEESE_WIDTH / 2.0)
 
 	# player 1 cheese placement
-	var p1_start_y = PADDLE1_Y - MARGIN - cheese_grid__height + CHEESE_HEIGHT / 2.0
+	var p1_start_y = PADDLE2_Y - MARGIN - cheese_grid_height + CHEESE_HEIGHT / 2.0
 	for row in range(ROWS):
 		for col in range(COLUMNS):
 			var cheese = CheeseScene.instantiate()
@@ -43,7 +40,7 @@ func spawn_cheese():
 			add_child(cheese)
 	
 	# player 2 cheese placement
-	var p2_start_y = PADDLE2_Y + MARGIN + CHEESE_HEIGHT / 2.0
+	var p2_start_y = PADDLE1_Y + MARGIN + CHEESE_HEIGHT / 2.0
 	for row in range(ROWS):
 		for col in range(COLUMNS):
 			var cheese = CheeseScene.instantiate()
@@ -52,3 +49,30 @@ func spawn_cheese():
 				p2_start_y + row * (CHEESE_HEIGHT + GAP_Y)
 			)
 			add_child(cheese)
+
+# ------------------------------------------------------------------
+# Mouse ball spawn functions
+# ------------------------------------------------------------------
+
+const MouseScene = preload("res://scenes/game/mouse.tscn")
+const MOUSE_HEIGHT = 20
+const MOUSE_WIDTH = 20
+var MOUSE_SPAWN_LOCATIONS = [
+	Vector2(1152.0 / 2.0, PADDLE1_Y - MARGIN - MOUSE_HEIGHT / 2.0), 
+	Vector2(1152.0 / 2.0, PADDLE2_Y + MARGIN + MOUSE_HEIGHT / 2.0)  
+]
+var mouse_count = 2
+
+func spawn_mouse():
+	for i in range(mouse_count):
+		var mouse = MouseScene.instantiate()
+		mouse.position = MOUSE_SPAWN_LOCATIONS[i % MOUSE_SPAWN_LOCATIONS.size()]
+		add_child(mouse)
+
+# ------------------------------------------------------------------
+# Ready function
+# ------------------------------------------------------------------
+
+func _ready():
+	spawn_cheese()
+	spawn_mouse()

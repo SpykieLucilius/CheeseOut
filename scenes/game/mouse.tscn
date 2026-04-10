@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://enjyewocateo"]
+
+[ext_resource type="Script" uid="uid://cpvrg3pru0s63" path="res://scripts/entities/mouse.gd" id="1_a767x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ddhp"]
+
+[node name="Mouse" type="CharacterBody2D" unique_id=1817543204]
+collision_layer = 2
+script = ExtResource("1_a767x")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=897636636]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309661101]
+shape = SubResource("RectangleShape2D_0ddhp")
