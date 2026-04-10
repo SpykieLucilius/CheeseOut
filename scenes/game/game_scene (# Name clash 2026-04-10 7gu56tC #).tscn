@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c0r2hv5sra77"]
+[gd_scene format=3 uid="uid://20on7xgha55n"]
 
 [ext_resource type="Script" uid="uid://eyxg7ex24q0o" path="res://scripts/scenes/game_scene.gd" id="1_5xmm1"]
 [ext_resource type="Script" uid="uid://c7qv0kuv22rgt" path="res://scripts/entities/player_1.gd" id="2_ydf3n"]
@@ -31,8 +31,6 @@ offset_right = 1088.0
 offset_bottom = 128.0
 
 [node name="WinScreen" type="Control" parent="UI" unique_id=1727018287]
-process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,6 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="WinLabel" type="Label" parent="UI/WinScreen" unique_id=1706417246]
+visible = false
 layout_mode = 0
 offset_left = -150.0
 offset_top = -100.0
@@ -51,6 +50,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RestartButton" type="Button" parent="UI/WinScreen" unique_id=1521429088]
+visible = false
 layout_mode = 0
 offset_left = -30.0
 offset_right = 30.0

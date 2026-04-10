@@ -5,6 +5,7 @@ extends Node2D
 # ------------------------------------------------------------------
 
 func _on_back_button_pressed():
+	game_over = true
 	get_tree().change_scene_to_file("res://scenes/menus/start_screen.tscn")
 
 # ------------------------------------------------------------------
@@ -19,7 +20,7 @@ const CHEESE_HEIGHT = 20
 const GAP_X = 10
 const GAP_Y = 10
 
-const  PADDLE2_Y = 150.0
+const PADDLE2_Y = 150.0
 const PADDLE1_Y = 498.0
 const MARGIN = 20.0
 var cheese_grid_height = ROWS * CHEESE_HEIGHT + (ROWS - 1) * GAP_Y
@@ -37,6 +38,7 @@ func spawn_cheese():
 				start_x + col * (CHEESE_WIDTH + GAP_X),
 				p1_start_y + row * (CHEESE_HEIGHT + GAP_Y)
 			)
+			cheese.add_to_group("cheese_p1")
 			add_child(cheese)
 	
 	# player 2 cheese placement
@@ -48,6 +50,7 @@ func spawn_cheese():
 				start_x + col * (CHEESE_WIDTH + GAP_X),
 				p2_start_y + row * (CHEESE_HEIGHT + GAP_Y)
 			)
+			cheese.add_to_group("cheese_p2")
 			add_child(cheese)
 
 # ------------------------------------------------------------------
@@ -70,9 +73,42 @@ func spawn_mouse():
 		add_child(mouse)
 
 # ------------------------------------------------------------------
+# Restart game function
+# ------------------------------------------------------------------
+
+func _on_restart_button_pressed():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+# ------------------------------------------------------------------
+# Win condition function
+# ------------------------------------------------------------------
+
+var game_over = false
+
+func check_win():
+	if game_over:
+		return
+	if get_tree().get_nodes_in_group("cheese_p1").size() == 0:
+		show_winner("Player 2")
+	elif get_tree().get_nodes_in_group("cheese_p2").size() == 0:
+		show_winner("Player 1")
+
+func show_winner(winner: String):
+	game_over = true
+	get_tree().paused = true
+	$UI/WinScreen/WinLabel.text = winner + " wins !"
+	$UI/WinScreen.visible = true
+
+# ------------------------------------------------------------------
 # Ready function
 # ------------------------------------------------------------------
 
 func _ready():
 	spawn_cheese()
 	spawn_mouse()
+
+	child_exiting_tree.connect(func(node):
+		if node.is_in_group("cheese"):
+			check_win.call_deferred()
+	)
