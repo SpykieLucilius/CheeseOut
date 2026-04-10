@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cvif3n6rric1y"]
+
+[node name="MultiplayerModeScreen" type="Node2D" unique_id=1459465952]
+
+[node name="Button" type="Button" parent="." unique_id=1077810064]
+offset_right = 8.0
+offset_bottom = 8.0

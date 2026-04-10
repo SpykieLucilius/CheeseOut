@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://enjyewocateo"]
 
 [ext_resource type="Script" uid="uid://cpvrg3pru0s63" path="res://scripts/entities/mouse.gd" id="1_a767x"]
+[ext_resource type="Texture2D" uid="uid://dqurs468x2m16" path="res://assets/img/sprites/WhiteMouse.png" id="2_2hotx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ddhp"]
+size = Vector2(40, 52)
 
 [node name="Mouse" type="CharacterBody2D" unique_id=1817543204]
 collision_layer = 2
 script = ExtResource("1_a767x")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=897636636]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
+[node name="MouseSprite" type="Sprite2D" parent="." unique_id=298119232]
+position = Vector2(0, 10)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_2hotx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309661101]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_0ddhp")

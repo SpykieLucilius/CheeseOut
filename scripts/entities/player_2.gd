@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var input_right: String = "P2_Right"
 
 const SPEED = 400.0
-const PADDLE_HALF_WIDTH = 40.0
+const PADDLE_HALF_WIDTH = 80.0
 const WALL_LEFT = 143.0
 const WALL_RIGHT = 1009.0
 
@@ -24,3 +24,13 @@ func _physics_process(_delta):
 	move_and_slide()
 
 	position.x = clamp(position.x, WALL_LEFT + PADDLE_HALF_WIDTH, WALL_RIGHT - PADDLE_HALF_WIDTH)
+
+# ------------------------------------------------------------------
+# Ready function
+# ------------------------------------------------------------------
+
+func _ready():
+	var sprite = $Player2Sprite
+	var tex_size = sprite.texture.get_size()
+	sprite.scale = Vector2(160.0 / tex_size.x, 20.0 / tex_size.y)
+	sprite.flip_v = true

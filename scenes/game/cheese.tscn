@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://bufo718x34vrc"]
 
+[ext_resource type="Script" uid="uid://cbn1u34jk5enu" path="res://scripts/entities/cheese.gd" id="1_rh512"]
+[ext_resource type="Shader" uid="uid://nmstmy6clwn5" path="res://assets/shaders/rounded_corners.gdshader" id="2_ply8c"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uy3a3"]
 size = Vector2(80, 20)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0eccc"]
+shader = ExtResource("2_ply8c")
+shader_parameter/tile_size = Vector2(80, 20)
+shader_parameter/corner_radius = 10.0
+
 [node name="Cheese" type="StaticBody2D" unique_id=1287418917 groups=["cheese"]]
+script = ExtResource("1_rh512")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1786992201]
 shape = SubResource("RectangleShape2D_uy3a3")
 
-[node name="CheeseShape" type="ColorRect" parent="." unique_id=130293428]
-offset_left = -40.0
-offset_top = -10.0
-offset_right = 40.0
-offset_bottom = 10.0
+[node name="CheeseSprite" type="Sprite2D" parent="." unique_id=808655459]
+material = SubResource("ShaderMaterial_0eccc")

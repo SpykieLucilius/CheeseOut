@@ -2,20 +2,19 @@
 
 [ext_resource type="FontFile" uid="uid://c428rlfd4rfv1" path="res://assets/fonts/MoonCheese-Regular.ttf" id="1_7c6e5"]
 [ext_resource type="Script" uid="uid://dvnqf4mhtvoa0" path="res://scripts/scenes/start_screen.gd" id="1_njl8u"]
+[ext_resource type="Texture2D" uid="uid://6v28cgcw2h7i" path="res://assets/img/illustration/CheeseOutTitle.webp" id="2_title"]
 
 [node name="StartScreen" type="Node2D" unique_id=939912574]
 script = ExtResource("1_njl8u")
 
-[node name="TitleText" type="Label" parent="." unique_id=529574816]
+[node name="TitleText" type="TextureRect" parent="." unique_id=529574816]
 offset_left = 64.0
-offset_top = 64.0
-offset_right = 927.0
-offset_bottom = 208.0
-theme_override_colors/font_color = Color(1, 1, 0.654902, 1)
-theme_override_fonts/font = ExtResource("1_7c6e5")
-theme_override_font_sizes/font_size = 127
-text = "Cheese Out!"
-vertical_alignment = 1
+offset_top = 40.0
+offset_right = 880.0
+offset_bottom = 160.0
+texture = ExtResource("2_title")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="SoloButton" type="Button" parent="." unique_id=1213527195]
 offset_left = 320.0

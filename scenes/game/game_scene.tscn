@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://eyxg7ex24q0o" path="res://scripts/scenes/game_scene.gd" id="1_5xmm1"]
 [ext_resource type="Script" uid="uid://c7qv0kuv22rgt" path="res://scripts/entities/player_1.gd" id="2_ydf3n"]
 [ext_resource type="Script" uid="uid://cgusng33tf4hu" path="res://scripts/entities/player_2.gd" id="3_6hqhf"]
+[ext_resource type="Texture2D" uid="uid://c1v0w5egejtyy" path="res://assets/img/sprites/WhiteCatPaddle.png" id="3_p0de3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xmm1"]
-size = Vector2(80, 10)
+size = Vector2(160, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omorx"]
 size = Vector2(286, 648)
@@ -61,11 +62,10 @@ text = "Replay"
 position = Vector2(576, 498)
 script = ExtResource("2_ydf3n")
 
-[node name="Player1Shape" type="ColorRect" parent="Player1" unique_id=451888985]
-offset_left = -40.0
-offset_top = -5.0
-offset_right = 40.0
-offset_bottom = 5.0
+[node name="Player1Sprite" type="Sprite2D" parent="Player1" unique_id=2129893644]
+position = Vector2(0, -2)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("3_p0de3")
 metadata/_edit_use_anchors_ = true
 
 [node name="Player1Collision" type="CollisionShape2D" parent="Player1" unique_id=1510140517]
@@ -75,11 +75,8 @@ shape = SubResource("RectangleShape2D_5xmm1")
 position = Vector2(576, 150)
 script = ExtResource("3_6hqhf")
 
-[node name="Player2Shape" type="ColorRect" parent="Player2" unique_id=1137269586]
-offset_left = -40.0
-offset_top = -5.0
-offset_right = 40.0
-offset_bottom = 5.0
+[node name="Player2Sprite" type="Sprite2D" parent="Player2" unique_id=587295883]
+texture = ExtResource("3_p0de3")
 metadata/_edit_use_anchors_ = true
 
 [node name="Player2Collision" type="CollisionShape2D" parent="Player2" unique_id=1158707756]
