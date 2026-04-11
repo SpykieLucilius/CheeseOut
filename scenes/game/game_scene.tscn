@@ -76,6 +76,8 @@ position = Vector2(576, 150)
 script = ExtResource("3_6hqhf")
 
 [node name="Player2Sprite" type="Sprite2D" parent="Player2" unique_id=587295883]
+position = Vector2(0, -2)
+scale = Vector2(0.255, 0.255)
 texture = ExtResource("3_p0de3")
 metadata/_edit_use_anchors_ = true
 

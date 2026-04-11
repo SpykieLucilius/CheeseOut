@@ -1,10 +1,18 @@
 extends StaticBody2D
 
+# ------------------------------------------------------------------
+# Texture and appearance setup
+# ------------------------------------------------------------------
+
 const TEXTURES = [
 	preload("res://assets/img/sprites/Cheese_Tile1.png"),
 	preload("res://assets/img/sprites/Cheese_Tile2.png"),
 	preload("res://assets/img/sprites/Cheese_Tile3.png"),
 ]
+
+# ------------------------------------------------------------------
+# ready function
+# ------------------------------------------------------------------
 
 func _ready():
 	var sprite = $CheeseSprite
