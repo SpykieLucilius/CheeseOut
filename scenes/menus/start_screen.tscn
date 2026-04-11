@@ -3,6 +3,15 @@
 [ext_resource type="FontFile" uid="uid://c428rlfd4rfv1" path="res://assets/fonts/MoonCheese-Regular.ttf" id="1_7c6e5"]
 [ext_resource type="Script" uid="uid://dvnqf4mhtvoa0" path="res://scripts/scenes/start_screen.gd" id="1_njl8u"]
 [ext_resource type="Texture2D" uid="uid://6v28cgcw2h7i" path="res://assets/img/illustration/CheeseOutTitle.webp" id="2_title"]
+[ext_resource type="Shader" uid="uid://nmstmy6clwn5" path="res://assets/shaders/rounded_corners.gdshader" id="4_0u4mh"]
+[ext_resource type="Texture2D" uid="uid://cq1e1pv2h2alq" path="res://assets/img/sprites/Button_Close.png" id="4_4awvq"]
+[ext_resource type="Texture2D" uid="uid://cliyckfv5scm3" path="res://assets/img/sprites/Button_Close_Clicks.png" id="5_0u4mh"]
+[ext_resource type="Texture2D" uid="uid://e4sq78n8vs4k" path="res://assets/img/sprites/Button_Close_Hoover.png" id="7_prb2f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0u4mh"]
+shader = ExtResource("4_0u4mh")
+shader_parameter/tile_size = Vector2(0, 0)
+shader_parameter/corner_radius = 60.00000285
 
 [node name="StartScreen" type="Node2D" unique_id=939912574]
 script = ExtResource("1_njl8u")
@@ -48,11 +57,17 @@ offset_top = 512.0
 offset_right = 128.0
 offset_bottom = 576.0
 
-[node name="QuitButton" type="Button" parent="." unique_id=395211430]
+[node name="QuitButton" type="TextureButton" parent="." unique_id=1097742197]
+material = SubResource("ShaderMaterial_0u4mh")
 offset_left = 1024.0
 offset_top = 64.0
 offset_right = 1088.0
 offset_bottom = 128.0
+texture_normal = ExtResource("4_4awvq")
+texture_pressed = ExtResource("5_0u4mh")
+texture_hover = ExtResource("7_prb2f")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="SoloButton" to="." method="_on_solo_button_pressed"]
 [connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]

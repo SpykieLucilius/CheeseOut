@@ -8,8 +8,7 @@ size = Vector2(80, 20)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0eccc"]
 shader = ExtResource("2_ply8c")
-shader_parameter/tile_size = Vector2(80, 20)
-shader_parameter/corner_radius = 10.0
+shader_parameter/corner_radius = 1.6450000781375
 
 [node name="Cheese" type="StaticBody2D" unique_id=1287418917 groups=["cheese"]]
 script = ExtResource("1_rh512")
