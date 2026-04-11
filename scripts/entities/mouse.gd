@@ -29,7 +29,12 @@ func _physics_process(_delta):
 		var normal = collision.get_normal()
 		if "Player" in collider.name:
 			if abs(normal.x) > abs(normal.y):
-				direction.x = -direction.x
+				var side = sign(position.y - collider.global_position.y)
+				if side == 0:
+					side = 1
+				position.y = collider.global_position.y + side * (PADDLE_HALF_HEIGHT + BALL_HALF_Y)
+				var hit_offset = (position.x - collider.global_position.x) / PADDLE_HALF_WIDTH
+				direction = Vector2(clamp(hit_offset, -1.0, 1.0), float(side)).normalized()
 			else:
 				var hit_offset = (collision.get_position().x - collider.global_position.x) / PADDLE_HALF_WIDTH
 				direction = Vector2(clamp(hit_offset, -1.0, 1.0), -sign(direction.y)).normalized()
@@ -42,7 +47,8 @@ func _physics_process(_delta):
 			var hole = holes[randi() % 2]
 			position = hole.global_position
 			var dir_x = 1.0 if hole.name == "MouseHoleLeft" else -1.0
-			direction = Vector2(dir_x, randf_range(-0.5, 0.5)).normalized()
+			var dir_y = randf_range(0.3, 0.7) * (1.0 if randf() > 0.5 else -1.0)
+			direction = Vector2(dir_x, dir_y).normalized()
 		else:
 			direction = direction.bounce(normal)
 			_show_hit()
