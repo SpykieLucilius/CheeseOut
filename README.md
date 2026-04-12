@@ -11,8 +11,7 @@ Go try the game here! : [Itch.io](https://spykielucilius.itch.io/cheese-out)
 * **VS Computer:** Play against the computer.
 
 ## Controls
-* **Player 1 (bottom):**  `A` (Left) / `D` (Right)
-* **Player 2 (top):**     `Left Arrow` (Left) / `Right Arrow` (Right)
+
 
 ## How to Play
 1. Each player controls a paddle on opposite sides of the arena.

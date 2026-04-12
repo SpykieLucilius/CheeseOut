@@ -15,7 +15,7 @@ const TEX_NORMAL = preload("res://assets/img/sprites/WhiteMouse.png")
 const TEX_HIT = preload("res://assets/img/sprites/WhiteMouseHit.png")
 
 var hit_timer = 0.0
-const HIT_DURATION = 0.1
+const HIT_DURATION = 0.3
 
 func _physics_process(_delta):
 	if hit_timer > 0.0:

@@ -70,6 +70,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [connection signal="pressed" from="SoloButton" to="." method="_on_solo_button_pressed"]
+[connection signal="pressed" from="MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
 [connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="GamesButton" to="." method="_on_games_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

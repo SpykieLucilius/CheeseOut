@@ -1,7 +1,25 @@
 [gd_scene format=3 uid="uid://cvif3n6rric1y"]
 
+[ext_resource type="Shader" uid="uid://nmstmy6clwn5" path="res://assets/shaders/rounded_corners.gdshader" id="1_x6khe"]
+[ext_resource type="Texture2D" uid="uid://cq1e1pv2h2alq" path="res://assets/img/sprites/Button_Close.png" id="2_v5hug"]
+[ext_resource type="Texture2D" uid="uid://cliyckfv5scm3" path="res://assets/img/sprites/Button_Close_Clicks.png" id="3_aqb5t"]
+[ext_resource type="Texture2D" uid="uid://e4sq78n8vs4k" path="res://assets/img/sprites/Button_Close_Hoover.png" id="4_yhjyd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_735fi"]
+shader = ExtResource("1_x6khe")
+shader_parameter/tile_size = Vector2(0, 0)
+shader_parameter/corner_radius = 60.00000285
+
 [node name="MultiplayerModeScreen" type="Node2D" unique_id=1459465952]
 
-[node name="Button" type="Button" parent="." unique_id=1077810064]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="BackButton" type="TextureButton" parent="." unique_id=1808141158]
+material = SubResource("ShaderMaterial_735fi")
+offset_left = 1024.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 128.0
+texture_normal = ExtResource("2_v5hug")
+texture_pressed = ExtResource("3_aqb5t")
+texture_hover = ExtResource("4_yhjyd")
+ignore_texture_size = true
+stretch_mode = 0

@@ -1,16 +1,31 @@
 [gd_scene format=3 uid="uid://cxj86tw0qtq4d"]
 
 [ext_resource type="Script" uid="uid://bi7eyyxrgqik0" path="res://scripts/scenes/difficulty_screen.gd" id="1_84ck3"]
+[ext_resource type="Texture2D" uid="uid://cq1e1pv2h2alq" path="res://assets/img/sprites/Button_Close.png" id="2_227qj"]
 [ext_resource type="FontFile" uid="uid://c428rlfd4rfv1" path="res://assets/fonts/MoonCheese-Regular.ttf" id="2_frb05"]
+[ext_resource type="Shader" uid="uid://nmstmy6clwn5" path="res://assets/shaders/rounded_corners.gdshader" id="2_k730p"]
+[ext_resource type="Texture2D" uid="uid://cliyckfv5scm3" path="res://assets/img/sprites/Button_Close_Clicks.png" id="3_k730p"]
+[ext_resource type="Texture2D" uid="uid://e4sq78n8vs4k" path="res://assets/img/sprites/Button_Close_Hoover.png" id="4_clh1y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clh1y"]
+shader = ExtResource("2_k730p")
+shader_parameter/tile_size = Vector2(0, 0)
+shader_parameter/corner_radius = 60.00000285
 
 [node name="DifficultyScreen" type="Node2D" unique_id=1770934804]
 script = ExtResource("1_84ck3")
 
-[node name="BackButton" type="Button" parent="." unique_id=284057479]
-offset_left = 64.0
+[node name="BackButton" type="TextureButton" parent="." unique_id=1388222168]
+material = SubResource("ShaderMaterial_clh1y")
+offset_left = 1024.0
 offset_top = 64.0
-offset_right = 128.0
+offset_right = 1088.0
 offset_bottom = 128.0
+texture_normal = ExtResource("2_227qj")
+texture_pressed = ExtResource("3_k730p")
+texture_hover = ExtResource("4_clh1y")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="EasyButton" type="Button" parent="." unique_id=1448548940]
 offset_left = 224.0

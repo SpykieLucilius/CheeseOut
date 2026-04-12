@@ -6,6 +6,7 @@ extends Node2D
 
 func _on_back_button_pressed():
 	game_over = true
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/menus/start_screen.tscn")
 
 # ------------------------------------------------------------------
@@ -70,6 +71,7 @@ func spawn_mouse():
 	for i in range(mouse_count):
 		var mouse = MouseScene.instantiate()
 		mouse.position = MOUSE_SPAWN_LOCATIONS[i % MOUSE_SPAWN_LOCATIONS.size()]
+		mouse.add_to_group("mouse_ball")
 		add_child(mouse)
 
 # ------------------------------------------------------------------

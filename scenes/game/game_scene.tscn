@@ -35,6 +35,7 @@ script = ExtResource("1_5xmm1")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1862077226]
 
 [node name="BackButton" type="TextureButton" parent="UI" unique_id=207786594]
+process_mode = 3
 material = SubResource("ShaderMaterial_gu01l")
 offset_left = 1024.0
 offset_top = 64.0

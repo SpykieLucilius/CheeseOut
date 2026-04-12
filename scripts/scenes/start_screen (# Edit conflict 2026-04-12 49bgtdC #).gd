@@ -11,12 +11,7 @@ func _on_games_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menus/other_game_screen.tscn")
 
 func _on_solo_button_pressed():
-	GameSettings.is_solo = true
 	get_tree().change_scene_to_file("res://scenes/menus/difficulty_screen.tscn")
-
-func _on_multiplayer_button_pressed():
-	GameSettings.is_solo = false
-	get_tree().change_scene_to_file("res://scenes/game/game_scene.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()
